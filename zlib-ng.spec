@@ -1,13 +1,13 @@
 Summary:	zlib data compression library for the next generation systems
 Summary(pl.UTF-8):	Biblioteka kompresji danych zlib dla systemów nowej generacji
 Name:		zlib-ng
-Version:	2.1.3
+Version:	2.1.5
 Release:	1
 License:	Zlib
 Group:		Libraries
 #Source0Download: https://github.com/zlib-ng/zlib-ng/releases
 Source0:	https://github.com/zlib-ng/zlib-ng/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	f2ddef7b10e24cdcc4f17285575a6895
+# Source0-md5:	2642d3838818f00255cd78f6bd10e561
 URL:		https://github.com/zlib-ng/zlib-ng
 BuildRequires:	cmake >= 3.5.1
 BuildRequires:	gcc >= 6:4.7
