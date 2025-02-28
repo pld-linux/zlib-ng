@@ -1,4 +1,7 @@
-%bcond_with	tests
+#
+# Conditional build:
+%bcond_with	tests	# unit tests using gtest copy
+
 Summary:	zlib data compression library for the next generation systems
 Summary(pl.UTF-8):	Biblioteka kompresji danych zlib dla systemów nowej generacji
 Name:		zlib-ng
