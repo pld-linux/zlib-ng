@@ -15,7 +15,7 @@ Source0:	https://github.com/zlib-ng/zlib-ng/archive/%{version}/%{name}-%{version
 URL:		https://github.com/zlib-ng/zlib-ng
 BuildRequires:	cmake >= 3.5.1
 BuildRequires:	gcc >= 6:4.7
-BuildRequires:	rpmbuild(macros) >= 1.742
+BuildRequires:	rpmbuild(macros) >= 2.047
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -46,7 +46,7 @@ cd build
 %cmake .. \
 	-DCMAKE_INSTALL_INCLUDEDIR=include/zlib-ng \
 	-DCMAKE_INSTALL_LIBDIR=%{_lib} \
-	%{cmake_on_off tests WITH_GTEST}
+	-DWITH_GTEST=%{__ON_OFF tests}
 
 %{__make}
 
