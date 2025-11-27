@@ -5,15 +5,15 @@
 Summary:	zlib data compression library for the next generation systems
 Summary(pl.UTF-8):	Biblioteka kompresji danych zlib dla systemów nowej generacji
 Name:		zlib-ng
-Version:	2.2.5
+Version:	2.3.1
 Release:	1
 License:	Zlib
 Group:		Libraries
 #Source0Download: https://github.com/zlib-ng/zlib-ng/releases
 Source0:	https://github.com/zlib-ng/zlib-ng/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	9a85312769737921330ff3f1b2f892a0
+# Source0-md5:	fb474972d1dcd7cc1f5d290a6d668bbe
 URL:		https://github.com/zlib-ng/zlib-ng
-BuildRequires:	cmake >= 3.5.1
+BuildRequires:	cmake >= 3.14
 BuildRequires:	gcc >= 6:4.7
 BuildRequires:	rpmbuild(macros) >= 2.047
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -40,17 +40,16 @@ Pliki nagłówkowe biblioteki zlib-ng.
 %setup -q
 
 %build
-install -d build
-cd build
 # no ZLIB_COMPAT to get z-ng names
-%cmake .. \
+%cmake -B build \
 	-DCMAKE_INSTALL_INCLUDEDIR=include/zlib-ng \
 	-DCMAKE_INSTALL_LIBDIR=%{_lib} \
-	-DWITH_GTEST=%{__ON_OFF tests}
+	-DBUILD_TESTING=%{__ON_OFF tests}
 
-%{__make}
+%{__make} -C build
 
 %if %{with tests}
+cd build
 ctest --verbose
 %endif
 
