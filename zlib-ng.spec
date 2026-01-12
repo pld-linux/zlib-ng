@@ -6,7 +6,7 @@ Summary:	zlib data compression library for the next generation systems
 Summary(pl.UTF-8):	Biblioteka kompresji danych zlib dla systemów nowej generacji
 Name:		zlib-ng
 Version:	2.3.2
-Release:	1
+Release:	2
 License:	Zlib
 Group:		Libraries
 #Source0Download: https://github.com/zlib-ng/zlib-ng/releases
